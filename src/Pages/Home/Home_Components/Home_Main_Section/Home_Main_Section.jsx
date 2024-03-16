@@ -52,10 +52,10 @@ const Home_Main_Section = () => {
             </div>
             <div className="w-full ">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
-                <div className="col-span-2 sm:col-span-1 md:col-span-1 h-[30rem]">
+                <div className="col-span-2 sm:col-span-1 md:col-span-1 h-[31.5rem]">
                   <a
                     href="#"
-                    className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4 h-[15rem]"
+                    className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4 h-[15.5rem]"
                   >
                     <img
                       src={grid2}
@@ -67,7 +67,7 @@ const Home_Main_Section = () => {
 
                   <a
                     href="#"
-                    className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 h-[14rem]"
+                    className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 h-[15rem]"
                   >
                     <img
                       src={grid1}

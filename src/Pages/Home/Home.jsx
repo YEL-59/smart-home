@@ -4,6 +4,7 @@ import Home_Main_Section from "./Home_Components/Home_Main_Section/Home_Main_Sec
 import Service_Section from "./Home_Components/Service_Section/Service_Section";
 import Faq from "./Home_Components/Faq_Section/Faq";
 import Review_Section from "./Home_Components/Review_Section/Review_Section";
+import Why_ChooseUs_Section from "./Home_Components/Why_ChooseUs_Section/Why_ChooseUs_Section";
 
 const Home = () => {
   const [navfix, setNavfix] = useState(false);
@@ -27,8 +28,10 @@ const Home = () => {
         <NavBar />
       </div>
       <Home_Main_Section/>
+      <Why_ChooseUs_Section/>
       <Service_Section/>
       <Review_Section/>
+
       <Faq/>
     </>
   );

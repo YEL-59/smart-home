@@ -45,7 +45,7 @@ const Service = () => {
         <NavBar />
       </div>
       <div className="mt-20">
-        <div className="bg-cover bg-center bg-no-repeat bg-hero-pattern  bg-blend-multiply h-[25rem]  mb-5">
+        <div className="bg-cover bg-center bg-no-repeat bg-hero-pattern  bg-blend-multiply h-[25rem] ">
           <div className="container mx-auto ">
             <div className=" flex flex-col justify-start ">
               <DynamicHeading />

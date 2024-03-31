@@ -5,7 +5,7 @@ const Project_Details_Banner = () => {
     <>
       <section className="container mx-auto">
         <div className=" mt-20 mb-5">
-          <img src={service_img} alt="" className="w-full h-[30rem]" />
+          <img src={service_img} alt="" loading="lazy" role="presentation" decoding="async" fetchPriority="high" className="w-full h-[30rem]" />
         </div>
         <div>
           <div className="bg-[#00ABE4] border-t-[5px] rounded border-t-blue-600 p-2 ">

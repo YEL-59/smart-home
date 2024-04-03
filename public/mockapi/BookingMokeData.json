@@ -1,0 +1,26 @@
+[
+  {
+    "type": "Apartment",
+    "imagePath": "../images/Booking_Page_Images/bokingimg.png"
+  },
+  {
+    "type": "Cottage",
+    "imagePath": "../images/Booking_Page_Images/cottage.jpg"
+  },
+  {
+    "type": "Farm-house",
+    "imagePath": "../images/Booking_Page_Images/farmhouse.jpg"
+  },
+  {
+    "type": "Mansion",
+    "imagePath": "../images/Booking_Page_Images/manson.jpg"
+  },
+  {
+    "type": "Condo",
+    "imagePath": "../images/Booking_Page_Images/condo.jpg"
+  },
+  {
+    "type": "Cape code",
+    "imagePath": "../images/Booking_Page_Images/capcode.jpg"
+  }
+]

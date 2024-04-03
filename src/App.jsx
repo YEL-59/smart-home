@@ -12,6 +12,8 @@ import Blog_Details from './Pages/Blog/Blog_Details/Blog_Details';
 
 import Project from "./Pages/Project/Project";
 import Project_Details from "./Pages/Project/Project_Details/Project_Details";
+import Product from './Pages/Product/Product';
+import Single_Product_Details from './Pages/Product/Product_Components/Single_Product_Details/Single_Product_Details';
 
 function App() {
 
@@ -34,6 +36,9 @@ function App() {
 
        <Route path="/project" element={<Project />} />
         <Route path="/project_details/:postId" element={<Project_Details />} />
+
+        <Route path="/product" element={<Product />} />
+        <Route path="/product/:postId" element={<Single_Product_Details />} />
       </Routes>
     </>
   )

@@ -1,11 +1,18 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import navlogo from "../../../../public/images/Logo.png";
+import { motion } from "framer-motion";
 import { FaShoppingBag } from "react-icons/fa";
 import QuantityCounter from "../QuantityCounter _Section/QuantityCounter";
-import { motion } from "framer-motion";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 const NavBar = ({ cartCount, clickedProducts }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-
+  useEffect(() => {
+    // Show a test toast notification when the component mounts
+    toast.success('Test toast notification');
+  }, []);
   let Links = [
     { name: "Home", link: "/" },
     { name: "About Us", link: "/about_us" },
@@ -13,30 +20,38 @@ const NavBar = ({ cartCount, clickedProducts }) => {
     { name: "Contact US", link: "/contact_us" },
     { name: "Product", link: "/product" },
   ];
-
+  console.log("pass to navbar", clickedProducts);
   let [open, setOpen] = useState(false);
   // Define state for total price
-  const [totalPrice, setTotalPrice] = useState('');
+  const [totalPrice, setTotalPrice] = useState("");
 
- const handleQuantityChange = (newQuantity,productId) => {
-  // Find the index of the product in the clickedProducts array
-  const productIndex = clickedProducts.findIndex(product => product.id === productId);
-  if (productIndex !== -1) {
-    // Update the quantity for the specific product
-    const updatedProducts = [...clickedProducts];
-    updatedProducts[productIndex].quantity = newQuantity;
-    // Calculate the total price for the specific product
-    updatedProducts[productIndex].totalPrice = newQuantity * updatedProducts[productIndex].price;
-  
-    setTotalPrice(updatedProducts[productIndex].totalPrice );
-  }
- };
-console.log('***updated price',totalPrice)
+  const handleQuantityChange = (newQuantity, productId) => {
+    // Find the index of the product in the clickedProducts array
+    const productIndex = clickedProducts.findIndex(
+      (product) => product.id === productId
+    );
+    if (productIndex !== -1) {
+      // Update the quantity for the specific product
+      const updatedProducts = [...clickedProducts];
+      updatedProducts[productIndex].quantity = newQuantity;
+      // Calculate the total price for the specific product
+      updatedProducts[productIndex].totalPrice =
+        newQuantity * updatedProducts[productIndex].price;
+
+      setTotalPrice(updatedProducts[productIndex].totalPrice);
+    }
+  };
+  console.log("***updated price", totalPrice);
   console.log(clickedProducts ?? []);
+  //Modify receve arry to convert object.because i want to use map
+  const clickedProductArray = clickedProducts? Object.values(clickedProducts): [];
+
+  console.log("array of clicked item cart", clickedProductArray ?? []);
 
   return (
     <>
-      <div>
+      <div> 
+      <ToastContainer />
         <nav className="container mx-auto md:flex justify-between items-center text-black py-[18.5px] p-5 lg:py-5 px-0">
           <div className="p-2 md:p-0 lg:p-0 ">
             <motion.div
@@ -48,8 +63,12 @@ console.log('***updated price',totalPrice)
               }}
             >
               {" "}
-              {/* <img src={navlogo} alt=" main logo" className="h-10" /> */}
-            <h1>Smart home people</h1>
+              <img
+                src={navlogo}
+                alt=" main logo"
+                className="w-[7rem] h-12  drop-shadow-xl"
+              />
+              {/* <h1>Smart home people</h1> */}
             </motion.div>
           </div>
 
@@ -85,7 +104,7 @@ console.log('***updated price',totalPrice)
               className="md:hidden my-3 truncate"
               whileHover={{ scale: 1.1 }}
             >
-              <Link to="login">Login</Link>
+              <Link to="booking">Booking Now</Link>
             </motion.li>
             <motion.li
               className="md:hidden truncate"
@@ -101,11 +120,12 @@ console.log('***updated price',totalPrice)
             }`}
           >
             <button className="bg-[#d6e5f1] text-[#2c6777] md:text-[11px] lg:text-[16px] px-3 py-1 rounded font-semibold lg:font-medium truncate">
-              <Link to="/becomea_tutor">Send Money</Link>
+              <Link to="/booking">Booking now</Link>
             </button>
             <button className="bg-green-500 text-white md:text-[11px] lg:text-[16px] px-3 py-1 rounded font-semibold lg:font-medium truncate">
-              <Link to="/sign_in">Sign in</Link>
+              <Link to="/sign_in">Sign up</Link>
             </button>
+
             <button
               type="button"
               onClick={() => setIsDrawerOpen(!isDrawerOpen)} // Toggle drawer visibility
@@ -150,13 +170,14 @@ console.log('***updated price',totalPrice)
                 </svg>
                 <span className="sr-only">Close menu</span>
               </button>
-              {cartCount === 0 ? ( // Conditional rendering based on cartCount
+               {/* Conditional rendering based on cartCount */}
+              {cartCount === 0 ? (
                 <p className="mt-4 text-sm text-gray-500">
                   Add product to the cart
                 </p>
               ) : (
                 <div className="flex flex-col py-8 md:py-10 lg:py-8 border-t border-gray-50">
-                  {clickedProducts.map((product, index) => (
+                  {clickedProductArray.map((product, index) => (
                     <div key={index} className="flex  w-full">
                       <img
                         src={product.imageUrl}
@@ -177,11 +198,13 @@ console.log('***updated price',totalPrice)
                             {product.name}
                           </p>
                           <QuantityCounter
-                           initialValue={product.quantity}
-                           onQuantityChange={newQuantity => handleQuantityChange(newQuantity, product.id)}
+                            initialValue={product.quantity}
+                            availability={product.availability}
+                            onQuantityChange={(newQuantity) =>
+                              handleQuantityChange(newQuantity, product.id)
+                            }
                           />
                         </div>
-                      
                         <p className="text-xs leading-3 text-gray-600 pt-2">
                           Height: 10 inches
                         </p>
@@ -201,8 +224,10 @@ console.log('***updated price',totalPrice)
                             </p>
                           </div>
                           <p className="text-base font-black leading-none text-gray-800">
-                            {/* {totalPrice? totalPrice:product.price} */}
-                            {product.totalPrice ? `$${product.totalPrice.toFixed(2)}` : `$${product.price}`}
+                            {/* {totalPrice ? totalPrice : product.price} */}
+                            {product.totalPrice
+                              ? `$${product.totalPrice.toFixed(2)}`
+                              : `$${product.price}`}
                           </p>
                         </div>
                       </div>
@@ -214,7 +239,7 @@ console.log('***updated price',totalPrice)
           </div>
         </nav>
       </div>
-     
+      <div></div>
     </>
   );
 };

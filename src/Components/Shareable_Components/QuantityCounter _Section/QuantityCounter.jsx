@@ -1,17 +1,21 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const QuantityCounter = ({ initialValue, onQuantityChange }) => {
+const QuantityCounter = ({ initialValue, onQuantityChange, availability }) => {
   const [quantity, setQuantity] = useState(initialValue);
 
   const handleIncrement = () => {
-    setQuantity((prevQuantity) => prevQuantity + 1);
-    onQuantityChange(quantity + 1);
+    if (quantity < availability) {
+      const newQuantity = quantity + 1;
+      setQuantity(newQuantity);
+      onQuantityChange(newQuantity);
+    }
   };
 
   const handleDecrement = () => {
     if (quantity > 1) {
-      setQuantity((prevQuantity) => prevQuantity - 1);
-      onQuantityChange(quantity - 1);
+      const newQuantity = quantity - 1;
+      setQuantity(newQuantity);
+      onQuantityChange(newQuantity);
     }
   };
 
@@ -26,6 +30,7 @@ const QuantityCounter = ({ initialValue, onQuantityChange }) => {
       <span>{quantity}</span>
       <button
         onClick={handleIncrement}
+        disabled={quantity === availability}
         className="px-2 py-1 border border-gray-200 ml-2 focus:outline-none"
       >
         +

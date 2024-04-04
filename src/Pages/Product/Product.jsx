@@ -23,9 +23,12 @@ const Product = () => {
     if (!clickedProducts.some((p) => p.id === product.id)) {
       setCartCount(cartCount + 1);
       // Update clickedProducts array with new clicked product
-      setClickedProducts((prevClickedProducts) => [ product,...prevClickedProducts,]);
+      setClickedProducts((prevClickedProducts) => [
+        ...prevClickedProducts,
+        product,
+      ]);
     }
-    console.log("Clicked products:", clickedProducts);
+    console.log("product page to navbar (cartnumber):", clickedProducts);
     //console.log(product);
   };
 
@@ -36,84 +39,90 @@ const Product = () => {
       name: "Product 1",
       imageUrl: "../../../public/images/Product_Page_Images/product_img-1.png",
 
-      price: 300,
+      price: 1,
       discount: 70,
       category: "Photos",
-      title: "Blooth speker",
+      title: "Best View in New Yjlork City",
       description: "The city that never sleeps",
       timestamp: "2024-03-17T04:30:00",
       PostId: "123",
-      quantity:1
+      quantity: 1,
+      availability:9
     },
     {
       id: 2,
       name: "Product 2",
       imageUrl: "../../../public/images/Product_Page_Images/product_img-2.png",
 
-      price: 900,
+      price: 2,
       discount: 20,
       category: "Photos",
-      title: "home cleaner ",
+      title: "Best View in ",
       description: "The city that never sleeps",
       timestamp: "2024-03-17T10:30:00",
       PostId: "124",
-      quantity:1
+      quantity: 1,
+      availability:5
     },
     {
       id: 3,
       name: "Product 3",
       imageUrl: "../../../public/images/Product_Page_Images/product_img-3.png",
 
-      price: 1300,
+      price: 3,
       discount: 55,
       category: "Photos",
-      title: "candel",
+      title: "Best View in New ",
       description: "The city that never sleeps",
       timestamp: "2024-03-17T10:30:00",
       PostId: "125",
-      quantity:1
+      quantity: 1,
+      availability:4
     },
     {
       id: 4,
       name: "Product 4",
       imageUrl: "../../../public/images/Product_Page_Images/product_img-4.png",
 
-      price: 200,
+      price: 4,
       discount: 50,
       category: "Photos",
-      title: "digital watch",
+      title: "Best View in New York Cit",
       description: "The city that never sleeps",
       timestamp: "2024-03-17T09:30:00",
       PostId: "126",
-      quantity:1
+      quantity: 1,
+      availability:2
     },
     {
       id: 5,
       name: "Product 5",
       imageUrl: "../../../public/images/Product_Page_Images/product_img-5.png",
 
-      price: 900,
+      price: 5,
       // discount: 35,
       category: "Photos",
-      title: "light ",
+      title: "Best View in New York ",
       description: "The city that never sleeps",
       timestamp: "2024-03-17T01:30:00",
       PostId: "127",
-      quantity:1
+      quantity: 1,
+      availability:3
     },
     {
       id: 6,
       name: "Product 6",
       imageUrl: "../../../public/images/Product_Page_Images/product_img-6.png",
 
-      price: 100,
+      price: 6,
       // discount: 10,
       category: "Photos",
-      title: "digital pad",
+      title: "Best View in New York Ci",
       description: "The city that never sleeps",
       timestamp: "2024-03-17T20:30:00",
       PostId: "128",
-      quantity:1
+      quantity: 1,
+      availability:7
     },
     // Add more products as needed
   ];

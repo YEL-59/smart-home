@@ -15,9 +15,20 @@ import Project_Details from "./Pages/Project/Project_Details/Project_Details";
 import Product from './Pages/Product/Product';
 import Single_Product_Details from './Pages/Product/Product_Components/Single_Product_Details/Single_Product_Details';
 
+import React from "react";
+import AOS from "aos";
+import "aos/dist/aos.css";
 function App() {
 
-
+  React.useEffect(() => {
+    AOS.init({
+      offset: 100,
+      duration: 800,
+      easing: "ease-in-sine",
+      delay: 100,
+    });
+    AOS.refresh();
+  }, []);
   return (
     <>
        <Routes>

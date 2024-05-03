@@ -2,7 +2,7 @@
 const Single_Review_Card = ({name,description}) => {
   return (
     <>
-      <section className="max-w-sm border border-dashed rounded-xl shadow-xl p-4">
+      <section className="max-w-sm border border-dashed rounded-xl shadow-xl p-4" data-aos="slide-left">
         <div className="flex items-center mb-4">
           <img
             className="w-10 h-10 me-4 rounded-full"

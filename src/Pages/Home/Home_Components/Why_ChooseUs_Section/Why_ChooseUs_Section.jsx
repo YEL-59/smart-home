@@ -18,7 +18,7 @@ const Why_ChooseUs_Section = () => {
               />
             </div>
 
-            <div className="border-2 border-dashed p-1 rounded mt-5">
+            <div className="border-2 border-dashed p-1 rounded mt-5" data-aos="flip-up">
               <Why_ChoosUs_Single_Card
                 title={"Expert Tech Support"}
                 sort_description={

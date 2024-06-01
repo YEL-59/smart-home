@@ -42,7 +42,6 @@ function App() {
        <Route path='/blog' element={<Blog/>}/>
 
        <Route path='/blog/:postId' element={<Blog_Details/>}/>
-
        <Route path="/project" element={<Project />} />
         <Route path="/project_details/:postId" element={<Project_Details />} />
 

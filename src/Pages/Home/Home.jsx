@@ -7,6 +7,7 @@ import Review_Section from "./Home_Components/Review_Section/Review_Section";
 import Why_ChooseUs_Section from "./Home_Components/Why_ChooseUs_Section/Why_ChooseUs_Section";
 import AboutUs_Section from "./Home_Components/AboutUs_Section/AboutUs_Section";
 import Our_Product_Section from "./Home_Components/Our_Product_Section/Our_Product_Section";
+import Footer from "../../Components/Shareable_Components/Footer/Footer";
 
 const Home = () => {
   const [navfix, setNavfix] = useState(false);
@@ -38,6 +39,7 @@ const Home = () => {
       <Review_Section/>
 
       <Faq/>
+      <Footer/>
     </>
   );
 };

@@ -18,7 +18,7 @@ const Our_Product_Section = () => {
         </div>
 
         <div className="flex justify-center mt-10">
-          <div className="  grid grid-cols-2 gap-20 justify-center items-center align-middle mt-15">
+          <div data-aos="zoom-in-left" className="  grid grid-cols-2 gap-20 justify-center items-center align-middle mt-15">
             <div>
               <Product_Single_Card
                 name={"SMART SECURITY CAMERA"}

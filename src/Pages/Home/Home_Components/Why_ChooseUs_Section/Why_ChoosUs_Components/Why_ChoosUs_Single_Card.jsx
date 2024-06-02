@@ -2,7 +2,7 @@ const Why_ChoosUs_Single_Card = ({ title, sort_description }) => {
     return (
       <>
         <section>
-          <div className="grid gap-8 md:grid-cols-1 lg:gap-12 p-6 md:p-2 ">
+          <div className="grid gap-8 md:grid-cols-1 lg:gap-12 p-6 md:p-2 " >
             <a
               href="#"
               className="flex flex-col p-6 space-y-6 transition-all duration-500 bg-white border border-indigo-100 rounded-lg shadow hover:shadow-xl lg:p-4 lg:flex-row lg:space-y-0 lg:space-x-6"

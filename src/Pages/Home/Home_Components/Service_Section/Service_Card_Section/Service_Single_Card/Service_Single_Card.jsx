@@ -1,7 +1,7 @@
 const Service_Single_Card = ({title,body_text,src_link}) => {
   return (
     <>
-      <div className="max-w-sm bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="max-w-sm bg-white rounded-lg shadow dark:bg-gray-800 dark:border-gray-700" data-aos="zoom-in">
         <a href="#">
           <img
             className="rounded-md"

@@ -18,7 +18,7 @@ const Home_Main_Section = () => {
             <div className="lg:pr-8 ">
               <section className="w-full  ">
                 <div className="max-w-7xl mx-auto py-5 px-4 ">
-                  <div className=" ">
+                  <div  data-aos="zoom-in">
                     <p className="mt-1 text-6xl max-w-lg font-extrabold text-gray-900  sm:tracking-tight ">
                       {" "}
                       <span className=" relative inline-block">
@@ -50,10 +50,10 @@ const Home_Main_Section = () => {
                 </div>
               </section>
             </div>
-            <div className="w-full ">
+            <div className="w-full " data-aos="zoom-in">
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 ">
                 <div className="col-span-2 sm:col-span-1 md:col-span-1 h-[31.5rem]">
-                  <a
+                  <a 
                     href="#"
                     className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4 h-[15.5rem]"
                   >
@@ -65,7 +65,7 @@ const Home_Main_Section = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"></div>
                   </a>
 
-                  <a
+                  <a 
                     href="#"
                     className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 h-[15rem]"
                   >
@@ -78,7 +78,7 @@ const Home_Main_Section = () => {
                   </a>
                 </div>
                 <div className="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50  md:h-full flex flex-col h-[50rem]">
-                  <a
+                  <a 
                     href="#"
                     className="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
                   >

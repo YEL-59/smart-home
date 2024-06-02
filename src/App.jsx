@@ -40,14 +40,9 @@ function App() {
        <Route path='/privacy_policy' element={<Privacy_policy/>} />
        <Route path='/about_us' element={<AboutUs/>}/>
        <Route path='/blog' element={<Blog/>}/>
-
        <Route path='/blog/:postId' element={<Blog_Details/>}/>
-
-
-
        <Route path="/project" element={<Project />} />
         <Route path="/project_details/:postId" element={<Project_Details />} />
-
         <Route path="/product" element={<Product />} />
         <Route path="/product/:postId" element={<Single_Product_Details />} />
       </Routes>

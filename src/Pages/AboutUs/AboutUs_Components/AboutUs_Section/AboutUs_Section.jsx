@@ -9,7 +9,7 @@ const AboutUs_Section = () => {
   return (
     <>
       <section className="text-gray-600 body-font">
-        <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col  ">
+        <div className="container mx-auto flex gap-10 px-5 py-24 md:flex-row flex-col justify-center items-center md:items-start ">
           <div className="lg:max-w-2xl ">
             <div className="bg-[#EBEBEB] rounded-[45px] shadow-lg  ">
               <div className="p-5  ">
@@ -20,7 +20,7 @@ const AboutUs_Section = () => {
                 />
               </div>
             </div>
-            <div className="max-w-md border border-black bg-black opacity-50 rounded-2xl p-5 w-[50%] hidden md:block -mt-12 relative bottom-0 -right-[29rem]">
+            <div className="max-w-md border border-black bg-black opacity-50 rounded-2xl p-5 w-[50%] hidden lg:block -mt-12 relative bottom-0 -right-[25rem] ">
               <div className="p-1">
                 <div className="flex items-center">
                   <div className="p-3 bg-[#97d4a8] rounded-full shadow-lg">
@@ -35,7 +35,7 @@ const AboutUs_Section = () => {
             </div>
             {/* https://dummyimage.com/720x600 */}
           </div>
-          <div className="lg:flex-grow md:w-1/2 lg:pl-24 md:pr-16 py-9   ">
+          <div className="lg:flex-grow md:w-1/2   ">
             <Secoundary_Title_Section secondary_title={"About Us"} />
             <div className="mt-5 mb-5">
               <Main_Title_Section
